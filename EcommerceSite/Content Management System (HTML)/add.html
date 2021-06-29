@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMS</title>
+    <link rel = "stylesheet" href = "style\cms_style.css">
+</head>
+<body>
+    <center>
+    <img style="width: 400px;height: 150px;" src = "images\logo.PNG">
+    </center>
+    <ul>
+    <li><a href = "staffLogin.html">Staff Login</a></li>
+    <li ><a href = "list.html">List Products</a></li>
+    <li ><a href = "add.html">Add Item</a></li>
+    <li ><a href = "edit.html">Edit Item</a></li>
+    <li><a href = "delete.html">Delete Item</a></li>
+    <li><a href = "orders.html">Customer Orders</a></li>
+
+    </ul>
+    <br>
+   <center><h2> Add Items</h2></center>
+   
+<!-- Form to add Items in the product inventory -->
+    <form action = "database.php">
+        <table border = 0 align = "center" cellspacing = 10>
+            <tr>
+                <td>Name: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Description: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Price: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Stock: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Sex: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Style: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td>Image: </td>
+                <td><input type = "text"></td>
+            </tr>
+            <tr>
+                <td colspan = "2" align = "center"><input class="submit-button" type = "submit"value = "Add"></td>
+            </tr>
+
+        </table>
+    </form>
+
+   
+</body>
+</html>

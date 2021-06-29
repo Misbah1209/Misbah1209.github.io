@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title of the page -->
+    <title>CookBook-Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+</head>
+<body>
+    <div class="wall">
+        <!-- Navigation Bar start-->
+        <div class="nav-section">
+            <img src="Images/Logo2.png" alt="logo" >            
+            <div class="navbar-container">
+                <ul class="nav-links">
+                    <li><a onclick="display()">Home</a></li>
+                    <li><a onclick="document.getElementById('reg').style.display='block'">Register</a></li>
+                    <li><a onclick="document.getElementById('log').style.display='block'" >Login</a></li>
+                    <li id="add"><a onclick="profile()">+ Add Recipes</a></li>
+                </ul>
+            </div>
+            <p id="user" style="visibility: hidden;"></p>
+        </div>
+        <!-- Navigation Bar end -->
+        <div id="hidden" class="hide">    
+            <!--Banner start-->
+            <div class="img-section">
+                <img src="Images/food3.png" alt="banner" >
+            </div>
+            <div class="caption-section">
+                <h4>Best Recipes For Our Home Cook Chefs</h4>
+                <p>Check out latest Recipes from around the World.</p>
+            </div>
+            <!--Banner end-->
+            <hr>
+            <!--Editor picks start-->     
+            <div class="home-one"> <!-- Section Wrapper -->
+                <div class="slide-section"> <!-- Section 1 -->
+                    <div class="slideshow-container">
+                            <div class="slide fade"> <!-- Slide 1 -->
+                                <img src="Images/beef.jpg" class="image" alt="img" style="width:180%;border-radius: 5pc;">
+                                <div class="slide-info">
+                                    <h4>Filet Mignon</h4>
+                                    <p>With a side of Mashed Potato and Asparagus</p>
+                                </div>
+                            </div>
+                        <div class="slide fade"> <!-- Slide 1 -->
+                            <img src="Images/salmon.jpg" class="image" alt="img" style="width:180%;border-radius: 5pc;">
+                            <div class="slide-info">
+                                <h4>Smoked Salmon</h4>
+                                <p>Pan Seared Salmon with Herb Salsa</p>
+                            </div>
+                        </div>
+                        <div class="slide fade"> <!-- Slide 2 -->
+                            <img src="Images/pasta.jpg" class="image" alt="img" style="width:180%;border-radius: 5pc;">
+                            <div class="slide-info">
+                                <h4>Cheese Marinara</h4>
+                                <p>Cheesy Red Sauce Pasta</p>
+                            </div>
+                        </div>
+                        <div class="slide fade"> <!-- Slide 3 -->
+                            <img src="Images/sushi.jpg" class="image" alt="img" style="width:180%;border-radius: 5pc;">
+                            <div class="slide-info">
+                                <h4>Teriyaki Sushi Roll</h4>
+                                <p>Sushi with Teriyaki Chicken Filling</p>
+                            </div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>  
+                </div> <!-- Section 1 end -->
+                <div class="picks">
+                    <h4>Editor's Top Picks</h4>
+                    <p>Good Food is Good Mood!</p>
+                </div>
+            </div>
+            <!--Editor picks end-->
+            <hr>
+        </div>
+        <!-- My Profile start -->
+        <div id="profilePage">
+            <img src="Images/ban.png" alt="profileBanner">
+            <form id="saveFood" class="RContain">
+                <h1 style="text-align:center;">Add Recipe</h1>
+                <hr style="border-top: 3px dotted black;"><br>
+                <div class="foodRow">
+                    <div class="foodC">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Recipe Name" id="title" required>
+            
+                        <label>Time</label>
+                        <input type="text" placeholder="Enter Cook Time" id="time" required>
+                    </div>
+                    <div class="foodC">
+                        <label>Veg</label>
+                        <input type="text" placeholder="True/False" id="veg" required>
+                        
+                        <label>Cuisine</label>
+                        <input type="text" placeholder="Enter Cuisine" id="cuisine" required>
+                    </div>
+                    <div class="foodC">
+                        <label >Course</label>
+                        <input type="text" placeholder="Enter Course" id="course" required>
+                    
+                        <label >Image</label>
+                        <input type="text" placeholder="Enter Img URL" id="img" required>
+                    </div >
+                </div>
+                    <label>Description</label>
+                    <input type="text" placeholder="Enter Description" id="desc" required>
+                
+                    <label>Ingredients</label>
+                    <input type="text" placeholder="Enter Ingredients" id="items" required>
+                
+                    <label >How To</label>
+                    <input type="text" placeholder="Enter Directions" id="step" required>
+                
+                    <button onclick="return addRecipe()">save</button>
+                    <label id="lblfood"></label>
+              </form>
+        <br><br><br>
+        <br><br><br>
+        </div>
+        <br><br><br>
+        <br><br><br>
+    </div>
+    
+          <!-- login form starts here -->
+        <div id="log" class="modal">
+            <form id="Signin" class="modal-content animate">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('log').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="Images/black.png" alt="Avatar" class="avatar">
+                </div>
+                <div class="container">
+                    <label ><i class="fa fa-user-circle" style="font-size:24px"></i><b> Username</b></label>
+                    <input type="text" placeholder="Enter Username" id="uname" required>
+                    <label ><i class="fa fa-lock" style="font-size:24px"></i><b> Password</b></label>
+                    <input type="password" placeholder="Enter Password" id="psw" required>
+                </div>
+                <div class="logButton">
+                    <button onclick="return login()" >Login</button>
+                    <button onclick="return logout()" >Log Out</button><br>
+                </div>
+                <div><p id="logMessage" style="text-align:center;"></p></div>
+            </form>
+        </div>
+
+        <!-- Recipe modal starts here -->
+        <div id="fud" class="reg-modal">
+            
+        </div>
+
+        <!-- Registration form starts here -->
+        <div id="reg" class="reg-modal">
+            <form id="Register"  class="reg-modal-content animate">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('reg').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="Images/black.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <div class="sign">
+                        <div class="reg1">
+                            <label><b>First Name</b></label>
+                            <input type="text" placeholder="Enter First Name" id="fname" required>
+                            <label><b>Date ofBirth</b></label>
+                            <input type="text" placeholder="YYYY-MM-DD"  id="dob" required>
+                            <label><b>Email</b></label>
+                        </div>
+                                                    
+                        <div class="reg1">
+                            <label><b>Last Name</b></label>
+                            <input type="text" placeholder="Enter Last Name" id="lname" required>
+                            <label><b>Nationality</b></label>
+                            <input type="text" placeholder="Enter Nationality" id="place" required>    
+                        </div>
+
+                        
+                        <input type="text" placeholder="Enter Email" id="email" required>    
+                        
+                        <div class="reg1">
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" id="pswd" required>
+                        </div>
+                                                        
+                        <div class="reg1">
+                            <label><b>Confirm Password</b></label>
+                            <input type="password" placeholder="Re-Enter Password" id="pswd1" required  onchange="validatePswd()">   
+                        </div>
+                        
+                        <button class="regBT" onclick="return addUser()">Register</button>
+                        
+                        <p id="regMessage" style="text-align:center;"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div  id="hidden2" class="hide">
+            <div class="wall">
+                <div class="Cuisine">
+                    <div class="name" >
+                        <h4>Cuisine</h4>
+                    </div>
+                    <div class="types" >
+                        <img alt="img" src="Images/italy.jpg" >
+                        <p>Italian</p>
+                    </div>
+                    <div class="types" >
+                        <img alt="img" src="Images/arabic.jpg" >
+                        <p>Arabic</p>
+                    </div>
+                    <div class="types" >
+                        <img alt="img" src="Images/china.jpg" >
+                        <p>Chinese</p>
+                    </div>
+                    <div class="types" >
+                        <img alt="img" src="Images/india.jpg" >
+                        <p>Indian</p>
+                    </div>
+                    <div class="types" >
+                        <img alt="img" src="Images/america.jpg" >
+                        <p>American</p>
+                    </div>
+                </div>
+                <hr>
+            <!-- Recipe display section -->
+            <div class="topnav">
+                <h4>Recipes</h4>
+                <div class="topnav-right">
+                    <a  onclick="Soup()">Soup</a>
+                    <a onclick="Entre()">Appetizers</a>
+                    <a onclick="MainC()">Main Course</a>
+                </div>
+            </div>
+            <div class="recipes">
+                <div id="food" class="recipeRow">
+                    <!-- all recipes to be displayed -->
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/pasta.jpg" alt="food">
+                            </div
+                            ><br>
+                            <h3>"Cheese Marinara" </h3>
+                            <br>
+                            <p>Cheesy Red Sauce Pasta</p>
+                            <br>
+                            <p>Cook Time:50mins</p>
+                            <br>
+                            <button onclick="showCard(1)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/salmon.jpg" alt="food">
+                            </div>
+                            <br>
+                            <h3>"Smoked Salmon" </h3>
+                            <br>
+                            <p>Pan Seared Salmon with Herb Salsa</p>
+                            <br>
+                            <p>Cook Time:15mins</p>
+                            <br>
+                            <button onclick="showCard(2)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/beef.jpg" alt="food">
+                            </div>
+                            <br>
+                            <h3>"Filet Mignon" </h3>
+                            <br>
+                            <p>With a side of Mashed Potato and Asparagus</p>
+                            <br>
+                            <p>Cook Time:20mins</p>
+                            <br>
+                            <button onclick="showCard(3)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/sushi.jpg" alt="food">
+                            </div>
+                            <br>
+                            <h3>"Teriyaki Sushi Roll" </h3>
+                            <br>
+                            <p>Sushi with Teriyaki Chicken Filling</p>
+                            <br>
+                            <p>Cook Time:55mins</p>
+                            <br>
+                            <button onclick="showCard(4)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/soup.jpg" alt="food">
+                            </div>
+                            <br>
+                            <h3>"Lentil Soup" </h3>
+                            <br>
+                            <p>Creamy Lentil Soup</p>
+                            <br>
+                            <p>Cook Time:40min</p>
+                            <br>
+                            <button onclick="showCard(5)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/biryani.jpg" alt="food">
+                            </div>
+                            <br>
+                            <h3>"Hyderabadi Dum Biryani" </h3>
+                            <br>
+                            <p>Made with Authentic Indian Spices</p>
+                            <br>
+                            <p>Cook Time:60mins</p>
+                            <br>
+                            <button onclick="showCard(6)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/manchow.jpg" alt="food">
+                            </div><br><h3>"Manchow Soup" </h3>
+                            <br><p>Hot and Spicy Chicken Manchow Soup</p><br>
+                            <p>Cook Time:35mins</p><br>
+                            <button onclick="showCard(7)">View</button>
+                        </div>
+                    </div>
+                    <div class="recipeColumn">
+                        <div class="recipeCard">
+                            <div class="recipeColumn">
+                                <img src="Images/maggi.jpg" alt="food">
+                            </div>
+                            <br><h3>"Maggi" </h3><br>
+                            <p>easy and fast noodles</p>
+                            <br><p>Cook Time:2mins</p><br>
+                            <button onclick="showCard(22)">View</button>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer> 
+        <div class="row">
+            <div class="ft">
+                <div class="text">
+                    <h2>Recipes</h2>
+                    <ul>
+                        <li><a href="#">Editor's Pick</a></li>
+                        <li><a href="#">New Addition</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft" >
+                <div class="text">
+                    <h2>QUICKLINKS</h2>
+                    <ul>
+                        <li><a onclick="document.getElementById('log').style.display='block'" >Customer Login</a></li>
+                        <li>Help</li>
+                        <li><a onclick="document.getElementById('reg').style.display='block'" >Customer Register</a></li>
+                        <li>Privacy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft" style="width:50%;">
+                <div class="text">
+                    <h2>2021 COOKBOOK. All Right Reserved</h2>
+                </div>
+            </div>
+        </div>              
+    </footer>
+    <!-- Footer -->
+   <script src="client.js"></script>
+</body>
+</html>

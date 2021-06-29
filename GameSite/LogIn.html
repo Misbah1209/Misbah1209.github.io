@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Link to external style sheet -->
+    <link rel="stylesheet" type="text/css" href="Style\style.css">
+    <!-- Link to icons -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Login</title>
+    <style>
+            /* Change footer on hover */
+            .footer a:hover {
+                  background-color: crimson;
+            }
+           
+            /* Style the button hover */
+            .btn-group .button:hover {
+                 background-color: crimson; 
+            }
+    </style>
+
+</head>
+<body style="background-color:limegreen">
+  <div class="header"> 
+        <img src="images\lg1.1.png" alt="logo" style=" float:left; width:300x;height:200px;">
+        <img src= "images\header (1).jpg" alt="HeaderImg" style="height:200px;">
+    </div>
+    
+    <div class="topnav">
+       <div class="btn-group" >
+            <button class="button" style="vertical-align:middle; font-family:fantasy">  
+                <span><a class="selected" href="LogIn.html">LogIn <i class="fas fa-sign-in-alt"style="color:#1F0C57; font-size:20px;"></i></a></span>
+            </button>
+
+            <button class="button" style="vertical-align:middle ; font-family:fantasy">
+                <span><a href="Register.html">Register </a><i class="fas fa-address-card"style="color:#1F0C57; font-size:20px;"></i></span>
+            </button>
+            <button class="button" style="vertical-align:middle ; font-family:fantasy">
+                <span><a href="Leaderboard.html">Leaderboard </a><i class="fas fa-trophy"style="color:#1F0C57; font-size:20px;"></i></span>
+            </button>
+            <button class="button" style="vertical-align:middle ; font-family:fantasy">
+                <span><a href="Home.html">Home </a><i class="fas fa-home"style="color:#1F0C57; font-size:20px;"></i></span>
+            </button>   
+        </div>
+    </div>
+   <br>
+    <div class="round">
+        <form>
+              <div class="imgcontainer">
+                <img src="images\avatar.png" alt="Avatar" class="avatar">
+              </div>
+            <br>
+              <p style="text-align:center; font-family:Snap ITC; font-size:90px; color:white">HELLO THERE!</p>
+              <div class="container">
+                  <label for="uname"><i class="fas fa-user-circle"style="color:purple; font-size:20px;"></i><b> Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+<br>
+                <label for="psw"><i class="fas fa-lock"style="color:purple; font-size:20px;"></i><b> Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="formbutton">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+                <br>
+                <button type="button" class="cancelbtn" >Cancel</button>
+              </div>
+        </form>
+    </div>
+    <br>
+    <div class="footer">
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+        <a href="#">About Us</a>
+        <a href="#">Manage Cookies</a>
+        <span class="fab fa-whatsapp-square" style="color:green; float:right; font-size:40px;"></span>
+        <span class="fab fa-instagram-square" style="color:deeppink; float:right; font-size:40px;"></span>
+        <span class="fab fa-facebook-square" style="color:darkblue; float:right; font-size:40px;"></span>
+        <span class="fab fa-snapchat-square" style="color:yellow; float:right; font-size:40px;"></span>
+        <span class="fab fa-youtube-square" style="color:red; float:right; font-size:40px;"></span>
+    </div>
+</body>
+</html>

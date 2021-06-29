@@ -1,0 +1,275 @@
+/*common styling for all Pages*/
+    body { margin: 0; font-family:stencil;font-size: 20px;}
+
+    * {box-sizing: border-box;}
+
+    /* Style the header */
+    .header {
+    background-color: #81F5F2;/*light blue*/
+    padding: 10px;
+    text-align: center;
+    }
+
+    /* Style the footer */
+    .footer {
+    background-color: #81F5F2;/*light blue*/
+    padding: 14px 20px;
+    text-align: left;
+    font-family: fantasy;
+    }
+
+    /* Style the footer links*/
+    .footer a {
+    color: #1F0C57;/*dark blue*/
+    text-align: left;
+    display: inline-block;
+    padding: 14px 20px;
+    text-decoration: none;
+    }
+
+    /* Change footer on hover */
+    .footer a:hover {
+    padding: 14px 20px;
+    color: white;
+    border: 1px solid white;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+    overflow: hidden;
+    background-color: #F7F22B;/*yellow*/
+    }
+
+    /* Style the button group */
+    .btn-group .button {
+    background-color: #F7F22B;/*yellow*/
+    border: 1px solid white;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align:middle;
+    font-family:fantasy;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    }
+
+    .btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+    }
+
+    .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    }
+
+    .button:hover span {
+    padding-right: 25px;
+    }
+
+    .button:hover span:after {
+    opacity: 1;
+    right: 0;
+    }
+
+    /* Change footer on hover */
+    .footer a:hover {
+    background-color: greenyellow;
+    }
+
+    /* Style the button hover */
+    .btn-group .button:hover {
+    background-color: greenyellow; /*green*/
+    }
+/*Common styling ends here*/
+
+/* Styling of Home page */
+    .star{
+    float: right;
+    margin-right:10px;
+    padding: 15px;
+    }
+
+    .game {
+    width: 130px;
+    height: 195px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:582px;
+    width:900px;
+    }
+    .game .game-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    }
+    .game:hover .game-top {
+    display: inline;
+    }
+
+    /* Create 2 equal columns that floats next to each other */
+    .column {
+    float: left;
+    width: 50%;
+    padding: 35px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }  
+/*Styling for Home page ends here*/
+
+/* Styling of Leaderboard page */
+    /*Styling the table*/
+    #players {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    #players td, #players th, #players tr{
+    border: 1px solid white;
+    padding: 8px;
+    font-family:Stencil;
+    }
+
+    #players th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: green;
+    color: white;
+    }
+    table.center {
+    margin-left:auto; 
+    margin-right:auto;
+    }
+/*Styling for Leaderboard page ends here*/
+
+/* Styling of LogIn page */
+    .round {
+    border: 4px solid #C81215 ;
+    border-radius: 12px;
+    margin:10px 60px 10px 60px;
+    }
+
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #adebad;
+    box-sizing: border-box;
+    }
+
+    /*login button style*/
+    .formbutton {
+    background-color: yellow;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    }
+
+    .formbutton:hover {
+    opacity: 0.8;
+    }
+
+    /*Cancel button styling*/
+    .cancelbtn {
+    width: 150px;
+    padding: 14px 20px;
+    background-color: #C81215;
+    margin-left:44%;
+    color: white;
+    border-radius:12px;
+    border: none;
+    cursor: pointer;
+    }
+
+    /*image styling*/
+    .imgcontainer {
+    text-align: left;
+    margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+    width: 350px;
+    height: 325px;
+    border-radius: 50%;
+    float: left;
+    }
+
+    .container {
+    padding: 16px;
+    }
+
+    span.psw {
+    float: right;
+    }
+/*Styling for Login page ends here*/
+
+/* Full-width input fields */
+.input[type=text], .input[type=password], .input[type=email], .input[type=date] {
+  width: 70%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: 1px solid yellow;
+  }
+
+hr {
+  border: 1px solid yellow;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+.submitbutton {
+    width: 150px;
+    padding: 14px 20px;
+    background-color: green;
+    color: white;
+    border-radius:12px;
+    border: none;
+    margin-left:40%;
+    cursor: pointer;
+    }
+
+
+/* Extra styles for the cancel button */
+    .cancelbutton {
+    width: 150px;
+    padding: 14px 20px;
+    background-color: #C81215;
+    color: white;
+    border-radius:12px;
+    border: none;
+    cursor: pointer;
+    }
+
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}

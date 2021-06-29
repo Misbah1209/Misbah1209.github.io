@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <!-- Title of the page -->
+                <title>KSTORE-Login</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+                <link rel="stylesheet" href="CSS/Stylesheet.css">
+            </head>
+            <body>
+            <!--Header start-->
+                <header class="nav-section">
+                    <div class="logo-container">
+                        <a href="home.html">
+                        <img src=Images\logo.png  alt="logo" class="logo">
+                        </a>
+                    </div>
+                    <!-- Navigation Bar -->
+                    <div class="navbar-container">
+                        <nav>
+                            <ul class="nav-links">
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="mens_products.html">Men</a></li>
+                                <li><a href="womens_products.html">Women</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <input type="text" class="search-box" placeholder=" Search ">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <!-- Navigation Bar -->
+                    
+                    <div class="shopping-cart">
+                        <i class="fa fa-shopping-cart fa-lg"></i>
+                        <p><a href="cart_page.html">Cart</a></p>
+                        
+                    </div>
+
+                    <div class="sign-in">
+                        <i class="fa fa-sign-in fa-lg"></i>
+                        <p><a href="login.html">Login</a></p>
+                    </div>
+
+                    <div class="profile-user">
+                        <i class="fa fa-user-circle fa-lg"></i>
+                        <p><a href="profile.html">My Profile</a></p>
+                    </div>
+
+                    <div class="create-user">
+                        <i class="fa fa-users fa-lg"></i>
+                        <p><a href="Register.html">Create Account</a></p>
+                    </div>
+                </header>
+            <!--Header end-->
+            
+                <div class="bg-img" style="background-image: url(Images/bg3.jpg);"><!-- login form start -->
+    
+        <form  id="formReg" class="form_container">
+            <h1 >Join Us</h1><br>
+            <hr><br>
+            <h2 id="message">Log In</h2>
+         <br>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="pswd" required>
+            <button style="width:49%" type="submit" class="btn" onclick="isUserRegistered()">Log In</button>
+            <button style="width:49%" type="submit" class="btn" onclick="logOut()">Log Out</button><br><br>
+            <button type="submit" class="btn" onclick="unRegister()">Delete Account</button>
+            <label id="lbllogin"></label>
+          </form>
+    </div><!-- login form end -->
+            
+            <footer> <!--Footer start-->
+            <div class="shop item">
+            <h4>SHOP</h4>
+                <ul>
+                    <li><a href="mens_products.html">Men</a></li>
+                    <li><a href="womens_products.html">Women</a></li>
+                </ul>
+            </div>
+
+            <div class="products item">
+                <h4>PRODUCTS</h4>
+                <ul>
+                    <li><a href="#">Featured</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                </ul>
+            </div>
+
+            <div class="customer item">
+                <h4>QUICKLINKS</h4>
+                <ul>
+                    <li><a href="login.html">Customer Login</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li><a href="Register.html">Customer Register</a></li>
+                    <li><a href="cart_page.html">Cart</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="copyright">
+                <p>C&copy; 2021 KSTORE. All Right Reserved</p>
+            </div>
+        </footer> <!--Footer end-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <script src="Javascript/Slide.js"></script>
+        <script src="Javascript\Forms.js"></script>
+        </body>
+        </html>
