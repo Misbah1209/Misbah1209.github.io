@@ -1,0 +1,1322 @@
+/* below is the root styling of the app  */
+@font-face {
+    font-family: primary;
+    src: url(getaway.otf);
+}
+
+@font-face {
+    font-family: secondary;
+    src: url(Montserrat.ttf);
+}
+
+@font-face {
+    font-family: list;
+    src: url(StokeNote.ttf);
+}
+
+:root {
+    --color1: #DEEFF0;
+}
+
+:root {
+    --color2: #8CD0DE;
+}
+
+:root {
+    --color3: #E9F1F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: var(--color3);
+    margin: 0;
+    font-family: secondary;
+}
+
+h1 {
+    font-family: primary;
+}
+
+i {
+    margin-right: 10px;
+}
+
+/* root styling ends here */
+/* below is the styling for the footer contents */
+
+footer {
+    min-height: 28vh;
+    display: flex;
+    background-color: var(--color2);
+}
+
+.item {
+    font-size: 14px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.item li a {
+    text-decoration: underline;
+    color: black;
+}
+
+.item li a:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 75px;
+    margin-left: -20px;
+    color: black;
+}
+
+.copyright i {
+    font-size: 30px;
+}
+
+/* footer styling ends here */
+/* below is the styling for the navigation bar */
+
+.nav-section {
+    margin-right: 10px;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 215px;
+    height: 115px;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li:hover {
+    transform: scale(1.1);
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* navigation bar styling ends here */
+/* below is the styling for the index page banner */
+
+.banner-container {
+    margin-top: 0.5rem;
+    height: auto;
+}
+
+.img-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption-section {
+    position: absolute;
+    top: 142px;
+    right: 127px;
+}
+
+.caption-section h1 {
+    font-size: 75px;
+    font-weight: 700;
+}
+
+.caption-section p {
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 510px;
+}
+
+.pagename,
+.content {
+    margin: 0px 20px;
+}
+
+/* index page banner styling ends here */
+/* below is the styling for the index page places container */
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 4% 2%;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.box {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 2%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+    line-height: 0;
+    border-radius: 45px;
+}
+
+.box>img {
+    width: 200%;
+    height: calc(100% - 10vh);
+    object-fit: cover;
+    transition: .5s;
+}
+
+.box>span {
+    font-size: 3.8vh;
+    display: block;
+    text-align: center;
+    height: 10vh;
+    line-height: 2.6;
+}
+
+.box:hover {
+    flex: 1 1 50%;
+}
+
+.box:hover>img {
+    width: 100%;
+    height: 100%;
+}
+
+.content h2 {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.content p {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 60px;
+}
+
+.fashionContent h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: 50px;
+}
+
+.fashionContent p {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 60px;
+}
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    float: right;
+    margin-right: 85px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.button:hover {
+    background-color: var(--color2);
+}
+
+.fashionContainer {
+    align-items: center;
+    display: flex;
+}
+
+.fImg {
+    max-width: 25%;
+    max-height: 15%;
+    float: left;
+}
+
+.fImg img {
+    width: 500px;
+    margin-left: 60px;
+}
+
+.fText {
+    font-size: 20px;
+    float: left;
+}
+
+.fText p {
+    float: right;
+    margin-left: 300px;
+}
+
+/* index page places container styling ends here */
+/* below is the styling for the form section container */
+
+section {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--color3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .form_container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: var(--color3);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 45px;
+}
+
+section .form_container .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+section .form_container .user .imgBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: var(--color3);
+    transition: 0.5s;
+}
+
+section .form_container .user .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .form_container .user .formBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+section .form_container .user .formBx form h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: black;
+}
+
+section .form_container .user .formBx form input {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: var(--color2);
+    color: black;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+section .form_container .user .formBx form input:focus {
+    background-color: var(--color2);
+}
+
+section .form_container .user .formBx form input[type='submit'] {
+    max-width: 135px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+section .form_container .user .formBx form input[type='submit']:hover {
+    background-color: var(--color2);
+}
+
+section .form_container .user .formBx form .signup {
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: grey;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .form_container .user .formBx form .signup a {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+section .form_container .signupBx {
+    pointer-events: none;
+}
+
+section .form_container.active .signupBx {
+    pointer-events: initial;
+}
+
+section .form_container .signupBx .formBx,
+section .form_container.active .signinBx .formBx {
+    left: 100%;
+}
+
+section .form_container.active .signupBx .formBx {
+    left: 0;
+}
+
+section .form_container .signupBx .imgBx,
+section .form_container.active .signinBx .imgBx {
+    left: -100%;
+}
+
+section .form_container.active .signupBx .imgBx,
+section .form_container .signinBx .formBx,
+section .form_container .signinBx .imgBx {
+    left: 0%;
+}
+
+.helptext {
+    display: none;
+}
+
+/* form section container styling ends here */
+/* below is the styling for the tips page tip box */
+
+.tips_head h1 {
+    font-size: 75px;
+    font-weight: 700;
+}
+
+.tips_head p {
+    font-weight: bolder;
+    font-size: 25px;
+    text-align: center;
+}
+
+.tips-img {
+    float: left;
+    height: 320px;
+    width: 327px;
+}
+
+.tips-img img {
+    border-radius: 45px 0 0 45px;
+    height: 320px;
+    width: 327px;
+}
+
+.tips-info {
+    float: left;
+    height: 320px;
+    width: 660px;
+    border-radius: 0 45px 45px 0px;
+    background-color: white;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.tips-text h2 {
+    margin: 0 0 0 38px;
+    padding-top: 30px;
+    font-size: 25px;
+    font-weight: 400;
+    color: black;
+}
+
+.tips-text p {
+    height: 125px;
+    margin: 0 38px 0 38px;
+    color: grey;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
+}
+
+.tips-btn {
+    position: relative;
+}
+
+.tips-btn p {
+    display: inline-block;
+    position: absolute;
+    top: -13px;
+    height: 50px;
+    margin: 0 0 0 38px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: grey;
+}
+
+span {
+    display: inline-block;
+    height: 50px;
+    font-size: 34px;
+}
+
+.tips-btn button {
+    float: right;
+    height: 50px;
+    width: 176px;
+    margin: 0 40px 0 16px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: black;
+    cursor: pointer;
+    outline: none;
+}
+
+.tips-btn button:hover {
+    background-color: var(--color2);
+}
+
+.tips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tips ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 90%;
+}
+
+.tips ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    width: 90%;
+    padding: 1rem 2rem;
+    margin: 1rem 0px;
+    border-radius: 20px;
+    position: relative;
+    transition: all .3s ease;
+    background-color: var(--color3);
+}
+
+.likes {
+    color: grey;
+    font-size: 15px;
+    margin-left: 38px;
+}
+
+/* tip box styling ends here */
+/* below is the styling for the tips page sort dropdown button */
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 55px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--color2);
+}
+
+/* sort button styling ends here */
+/* below is the styling for the outfit page weather section */
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.weather_card {
+    background: #fff;
+    width: 600px;
+    height: 195px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 32px;
+}
+
+.weather_humidity,
+.weather_preci,
+.weather_wind {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.weather_place,
+.weather_temp,
+.weather_search {
+    font-size: 40px;
+}
+
+.weather {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 20px;
+}
+
+.weather_icon {
+    animation: move 1s infinite alternate ease-in-out;
+    width: 150px;
+    height: 150px;
+    fill: none;
+}
+
+
+@keyframes move {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.searchBox {
+    background: black;
+    height: 50px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchButton {
+    color: var(--color2);
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    line-height: 35px;
+    width: 440px;
+    padding: 0 6px;
+
+}
+
+.searchButton:hover {
+    background: var(--color2);
+    color: white;
+}
+
+/* weather section styling ends here */
+/* below is the styling for the admin page tab container */
+
+:root {
+    --label-selector: "~ ul > li";
+    --slider-selector: "~ .slider";
+    --content-selector: "~ .content > section";
+}
+
+.tabs {
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    background: white;
+    padding: 50px;
+    padding-bottom: 80px;
+    width: 70%;
+    margin-top: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 5px;
+    min-width: 240px;
+}
+
+.tabs input[name="tab-control"] {
+    display: none;
+}
+
+.tabs ul li label {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--accent);
+}
+
+.tabs ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.tabs ul li {
+    box-sizing: border-box;
+    flex: 1;
+    width: 33%;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.tabs ul li label {
+    transition: all 0.3s ease-in-out;
+    color: var(--secondary);
+    padding: 5px auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+.tabs ul li label br {
+    display: none;
+}
+
+.tabs ul li label:hover,
+.tabs ul li label:focus,
+.tabs ul li label:active {
+    outline: 0;
+    color: lighten(var(--secondary), 15%);
+}
+
+.tabs .slider {
+    position: relative;
+    width: 33%;
+    transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+
+.tabs .slider .indicator {
+    position: relative;
+    width: 135px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 4px;
+    background: var(--color2);
+    border-radius: 1px;
+}
+
+.tabs .content {
+    margin-top: 30px;
+    margin-bottom: -60px;
+}
+
+.tabs .content section {
+    display: none;
+    animation-name: content;
+    animation-direction: normal;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    line-height: 1.4;
+    background-color: white;
+    min-height: auto;
+}
+
+.tabs input[name="tab-control"] {
+    display: none;
+}
+
+/* Add these rules for each tab */
+.tabs input[name="tab-control"]:nth-of-type(1):checked~.slider {
+    transform: translateX(0);
+}
+
+.tabs input[name="tab-control"]:nth-of-type(2):checked~.slider {
+    transform: translateX(100%);
+}
+
+.tabs input[name="tab-control"]:nth-of-type(3):checked~.slider {
+    transform: translateX(200%);
+}
+
+.tabs input[name="tab-control"]:nth-of-type(1):checked~.content section:nth-child(1),
+.tabs input[name="tab-control"]:nth-of-type(2):checked~.content section:nth-child(2),
+.tabs input[name="tab-control"]:nth-of-type(3):checked~.content section:nth-child(3) {
+    display: block;
+}
+
+@keyframes content {
+    from {
+        opacity: 0;
+        transform: translateY(5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+/* tab container styling ends here */
+/* below is the styling for the admin page tips table */
+
+#allTips,
+#allLists {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#allTips th,
+#allLists th {
+    text-transform: uppercase;
+}
+
+#allLists i {
+    margin: 0px;
+}
+
+#allTips td,
+#allLists td,
+#allTips th,
+#allLists th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+}
+
+#allTips tr,
+#allLists tr {
+    background-color: var(--color1);
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+#allTips tr:nth-child(odd),
+#allLists tr:nth-child(odd) {
+    background-color: white;
+}
+
+#allTips tr:hover,
+#allLists tr:hover {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#allTips th,
+#allLists th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color2);
+    color: white;
+}
+
+#allTips td:nth-child(3),
+#allTips th:nth-child(3),
+#allTips td:nth-child(1),
+#allTips th:nth-child(1),
+#allLists td:nth-child(1),
+#allLists th:nth-child(1),
+#allLists td:nth-child(4),
+#allLists th:nth-child(4),
+#allLists td:nth-child(3),
+#allLists th:nth-child(3) {
+    text-align: center;
+}
+
+/* tips table styling ends here */
+/* below is the styling for the admin page forms */
+
+.admin_section .form_container {
+    width: auto;
+}
+
+textarea {
+    height: 60px;
+    width: 291px;
+}
+
+select {
+    background-color: var(--color1);
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: var(--color2);
+    color: black;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.usertag {
+    color: var(--color3);
+}
+
+/* form styling ends here */
+/* below is the styling for the listitem page list notebook */
+
+:root {
+    --accent: #51B27F;
+    --accent2: #163839;
+}
+
+#notebook {
+    background: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    position: relative;
+    max-width: 375px;
+    min-height: 250px;
+    height: auto;
+    margin-top: 20px;
+}
+
+#notebook:before {
+    content: " ";
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    right: -8px;
+    bottom: -10px;
+    top: 10px;
+    width: 20px;
+    background: linear-gradient(to right, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray);
+    z-index: -1;
+}
+
+#notebook:after {
+    content: " ";
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    bottom: -10px;
+    height: 20px;
+    left: 10px;
+    right: 5px;
+    background: linear-gradient(to bottom, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray, white, gray);
+    z-index: -1;
+}
+
+#notebook h2 {
+    border-bottom: 4px double #F3A4C4;
+    padding: 50px 20px 10px;
+}
+
+#notebook ul {
+    list-style: none;
+    padding: 0;
+}
+
+#notebook ul li {
+    border-bottom: 1px solid #2179C1;
+    font-size: 16px;
+    padding: 10px 0;
+    position: relative;
+    font-family: list;
+    color: black;
+    font-weight: 700;
+}
+
+#notebook ul li p {
+    margin: 0;
+    padding-left: 60px;
+    position: relative;
+}
+
+#notebook ul li p:before {
+    background: transparent;
+    content: "";
+    border-radius: 100%;
+    border: 1px solid #333;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    margin: auto;
+}
+
+#notebook ul li p:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    left: 37px;
+    margin: auto;
+    border: 3px solid transparent;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 2px;
+    height: 0;
+    width: 0;
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    transition: all 0.3s;
+    max-height: 0;
+    max-width: 0;
+    border-color: transparent;
+}
+
+#notebook ul li input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    z-index: 100;
+}
+
+#notebook ul li input:hover {
+    cursor: pointer;
+}
+
+#notebook ul li input:checked+p:before {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+#notebook ul li input:checked+p:after {
+    animation: checkDown 0.2s ease-in-out, checkUp 0.25s 0.2s ease-in-out;
+    height: 7px;
+    width: 15px;
+    max-height: 7px;
+    max-width: 15px;
+    border-color: var(--accent2);
+}
+
+#notebook ul li a {
+    color: red;
+    float: right;
+    margin-top: -20px;
+    position: sticky;
+    z-index: 199;
+}
+
+@keyframes checkDown {
+    from {
+        border-left-color: var(--accent2);
+        height: 0;
+        width: 0;
+    }
+
+    to {
+        border-left-color: var(--accent2);
+        height: 7px;
+        width: 0;
+    }
+}
+
+@keyframes checkUp {
+    from {
+        border-bottom-color: transparent;
+        width: 0;
+    }
+
+    to {
+        border-bottom-color: var(--accent2);
+        width: 15px;
+    }
+}
+
+/* list item notebook styling ends here */
+/* below is the styling for the myprofile page user detail section */
+
+#gradient {
+    background: white;
+    background-image: linear-gradient(to right, var(--color3), var(--color2), var(--color3));
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100%;
+    height: 150px;
+}
+
+#gradient:after {
+    content: "";
+    position: absolute;
+    background: white;
+    left: 50%;
+    margin-top: -67.5px;
+    margin-left: -270px;
+    padding-left: 20px;
+    border-radius: 20px;
+    width: 520px;
+    height: 275px;
+    z-index: -1;
+}
+
+#profileCard {
+    position: absolute;
+    width: 450px;
+    padding: 25px 10px;
+    left: 52%;
+    top: 128px;
+    margin-left: -250px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
+    z-index: 5;
+}
+
+#profileCard img {
+    width: 170px;
+    float: left;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+#profileCard h2 {
+    text-transform: capitalize;
+}
+
+/* user detail styling ends here */
+/* below is the styling for the outfit cards */
+
+.OutfitColumn {
+    float: left;
+    width: 25%;
+    height: 375px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.OutfitRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 370px;
+    perspective: 1000px;
+    border-radius: 45px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 45px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 45px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: white;
+    border-radius: 45px;
+}
+
+.flip-card-front img{
+    width: 250px;
+    height: 375px;
+    border-radius: 45px;
+    mix-blend-mode: darken;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+}
+
+.flip-card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    border-radius: 45px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .1);
+}
+
+.flip-card-back h2{
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 25px;
+}
+
+.flip-card-back h4{
+    font-size: 12px;
+}
+
+.flip-card-back p{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 15px;
+}
+
+#outfitHead {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.outfitForm input[type='submit'] {
+    max-width: 135px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 400;
+    transition: 0.5s;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top:5px;
+    margin-left: 10px;
+}
+
+.outfitForm input[type='submit']:hover {
+    background-color: var(--color2);
+}
+
+#img-clear_id{
+    display: none;
+}
+
+label[for=img-clear_id]
+{
+    display: none;
+}
+/* outfit card styling ends here */
