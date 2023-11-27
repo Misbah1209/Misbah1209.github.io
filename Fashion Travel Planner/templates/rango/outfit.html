@@ -1,0 +1,81 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Outfit
+{% endblock %}
+{% block body_block %}
+{% if hide_weatherapp %}
+<style>
+#weatherapp {
+  display: none;
+}
+</style>
+{% endif %}
+<div id='weatherapp' class="row">
+    <div class="column"><!-- this div displays the form to enter city -->
+        <div class="weather_card">
+            <div class="weather_info">
+                <p class="weather_search">Enter city:</p><br>
+                <div class="searchBox">
+                    <input class="searchInput" type="text" name="" placeholder="Search">
+                    <button class="searchButton" href="#">
+                        <i class="fa-solid fa-search" style="margin: 0;"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="column"><!-- this div displays the weather condition of the city -->
+        <div class="weather_card">
+            <div class="weather_info">
+                <p class="weather_place">Dubai</p><br>
+                <p class="weather_humidity"><i class="fa-solid fa-water"></i>Humidity: <strong class="humidity">40
+                        %</strong></p>
+                <p class="weather_wind"><i class="fa-solid fa-wind"></i>Wind Speed: <strong class="wind">15
+                        km/h</strong></p>
+                <p class="weather_preci"><i class="fa-solid fa-cloud-rain"></i>Rainfall: <strong class="rainy">0
+                        mm</strong></p>
+                <form id="outfitForm" class="outfitForm" action="" method="post" ><!-- this form is used to find outfits as per weather-->
+                    {% csrf_token %}
+                    <input style="display: none;" type="number" name="temperature" id="temperature" value="37">
+                    <input style="display: none;" type="number" step="any" name="rain" id="rain" value="0">
+                    <input type="submit" value="Find Outfits" />
+                </form>
+            </div>
+            <div class="weather">
+                <img src="/static/images/icons/clear.png" class="weather_icon" viewBox="0 0 34 24"></img>
+
+                <p class="weather_temp">37 °C</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="OutfitRow" id="outfitContainer" style="margin: 20px;"><!-- this div displays the filtered the outfits -->
+    {% if outfits %}
+    {% for outfit in outfits %}
+        {% if forloop.first %}
+        <h2 id="outfitHead" style="color: black">{{ outfit.season }} Outfits Recommended For You !</h2>
+        {% endif %}
+        <div class="OutfitColumn">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{outfit.image.url}}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>{{ outfit.name }}</h2>
+                        <h4>@{{ outfit.username }}</h4>
+                        <p>{{ outfit.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% else %}
+    <strong>No outfit to reccomment; enter a city first.</strong>
+    {% endif %}
+</div>
+
+{% endblock %}

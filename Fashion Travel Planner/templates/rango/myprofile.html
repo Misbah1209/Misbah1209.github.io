@@ -1,0 +1,44 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+My Profile
+{% endblock %}
+{% block body_block %}
+<div id="gradient"></div>
+<div id="profileCard"><!-- this div displays the logged in user information -->
+    <img src="{% static 'images/user.jpg' %}" alt="banner">
+    <h2>{{ user.username}}</h2><br>
+    <p><strong>Username: </strong>{{ user.username}}</p>
+    <p><strong>Email: </strong>{{ user.email}}</p>
+    <p><strong>Telephone: </strong>{{ user.userprofile.telephone}}</p><br>
+    <p><strong>No. of Posts: </strong>{% if outfits %}{{ outfits|length }}{% endif %}</p>
+</div>
+<br><br>
+<div class="dropdown" style="float:right;">
+    <button class="button" ><i class="fa-solid fa-plus"></i><a href="{% url 'rango:add_outfit' %}" style="color: white;" >Upload</a></button>
+</div>
+<br><br>
+<div class="OutfitRow" style="margin: 40px;"><!-- this div displays the all the outfits uploaded by the user -->
+    {% if outfits %}
+        {% for outfit in outfits %}
+        <div class="OutfitColumn" >
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{outfit.image.url}}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>{{ outfit.name }}</h2>
+                        <h4>@{{ outfit.username }}</h4>
+                        <p>{{ outfit.description }}</p>
+                        <a href="{% url 'rango:delete_outfit' outfit.id %}" style="color: maroon;"><i class="fa-solid fa-trash-can"></i> Delete </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <strong>No Outfits Uploaded.</strong>
+    {% endif %}
+</div>
+{% endblock %}

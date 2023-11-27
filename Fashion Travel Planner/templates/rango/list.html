@@ -1,0 +1,62 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+To Do List
+{% endblock %}
+{% block body_block %}
+<section>
+    <div class="form_container">
+        <div class="user signinBx"><!-- this div displays the form to add new list -->
+            <div class="imgBx"><img src="{% static 'images/list1.jpg' %}" alt="list pic" /></div>
+            <div class="formBx">
+                <form method="post" action="">
+                    <h2>To Do List</h2>
+                    {% csrf_token %}
+                    <label for="{{ form.name.id_for_label }}">Name</label>
+                    {{ addlistform.name }}
+                    <input type="submit" value="Create" />
+                    <p class="signup">
+                        Want To view all list ?
+                        <a onclick="toggleForm();">Click here.</a>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+        <div class="user signupBx"><!-- this div displays all the list -->
+            <div class="formBx" style="flex-direction: column;">
+                <h2>All Lists</h2>
+                <table id="allLists">
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th> 
+                        <th>View</th>
+                        <th>Delete</th>                   
+                    </tr>
+                    {% if lists %}
+                    {% for list in lists %}
+                    <tr>
+                        <td>{{list.id}}</td>
+                        <td>{{list.name}}</td>
+                        <td><a href="{% url 'rango:items' list.id %}" style="color: green;"><i class="fa-solid fa-eye"></i></a></td>
+                        <td><a href="{% url 'rango:delete_list' list.id %}" style="color: maroon;"> <i class="fa-solid fa-trash-can"></i> </a></td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <strong>No List currently in availabe.</strong>
+                    {% endif %}
+                </table>
+                <form>
+                    <p class="signup">
+                        Want to create new list ?
+                        <a onclick="toggleForm();">Click here.</a>
+                    </p>
+                </form>
+            </div>
+            <div class="imgBx">
+                <img src="{% static 'images/list2.jpg' %}" alt="list pic" />
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

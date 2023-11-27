@@ -1,0 +1,60 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Home
+{% endblock %}
+{% block body_block %}
+    <div class="banner-section"><!-- this section displays the banner -->
+        <div class="banner-container">
+            <div class="img-section">
+                <img src="{% static 'images/b1.png' %}" alt="banner"
+                    style="display: block;margin-left: auto; margin-right: auto;width:100%">
+            </div>
+            <div class="caption-section">
+                <h1 style="color: white;">EXPLORE <span style="color: black;"> THE WORLD'S</span></h1>
+                <h1 style="color: #8CD0DE;margin-left: 447px;">WONDERS</h1>
+                <p>in STYLE and COMFORT.</p>
+            </div>
+        </div>
+    </div> <!-- banner ends here -->
+    <div class="fashionContent">
+        <p>EXPLORE YOUR FASHION </p>
+        <h2 style="color: black">STYLE HACKS!</h2>
+        <br>
+        <div class="fashionContainer">
+            <div class="fImg">
+                <img src="{% static 'images/b2.png' %}" alt="banner"> 
+            </div>
+            <div class="fText">
+                <p>Feel like your closet is stagnant and you can't put together an outfit?
+                    Want to learn a little more about how to simplify your fashion life?
+                    Here are few fashion hacks to help you give your clothes a new lease of life!
+                </p>
+                <button class="button">LEARN MORE</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="content"><!-- this section displays the places -->
+        <p>PLAN YOUR TRIP</p>
+        <h2 style="color: black">WHERE TO NEXT ?</h1>
+            <div class="container">
+                <div class="box">
+                    <img src="{% static 'images/DXB.png' %}" alt="place">
+                    <span>1. DUBAI</span>
+                </div>
+                <div class="box">
+                    <img src="{% static 'images/LHR.png' %}" alt="place">
+                    <span>2. LONDON</span>
+                </div>
+                <div class="box">
+                    <img src="{% static 'images/can.png' %}" alt="place">
+                    <span>3. CANCÚN</span>
+                </div>
+                <div class="box">
+                    <img src="{% static 'images/bali.png' %}" alt="place">
+                    <span>4. BALI</span>
+                </div>
+            </div>
+    </div>
+{% endblock %}

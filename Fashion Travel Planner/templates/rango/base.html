@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>
+        {% block title_block %}
+        Home
+        {% endblock %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="nav-section"><!-- this header displays navigation bar -->
+        <div class="logo-container">
+            <a href="{% url 'rango:index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="logo" class="logo">
+            </a>
+        </div>
+        <span class="usertag" style="margin-left: 10px;">
+            {% if user.is_authenticated %}
+            <p id="nametag"> Hey {{ user.username}}!</p>
+            {% else %}
+            <p id="nametag"> Hey Guest!</p>
+            {% endif %}
+        </span>
+        <div class="navbar-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'rango:outfit' %}"><i class="fa-solid fa-shirt"></i>OUTFIT</a></li>
+                    <li><a href="{% url 'rango:tips' %}"><i class="fa-solid fa-handshake-angle"></i>TIPS</a></li>
+
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'rango:lists' %}"><i class="fa-solid fa-list-check"></i>CHECKLIST</a></li>
+                    <li><a href="{% url 'rango:profile' %}"><i class="fa-sharp fa-solid fa-user"></i>MY PROFILE</a></li>
+                    <li><a href="{% url 'rango:logout' %}"><i class="fa-sharp fa-solid fa-user"></i>LOGOUT</a></li>
+                    {% else %}
+                    <li><a href="{% url 'rango:register' %}"><i class="fa-solid fa-address-card"></i>SIGN
+                            IN/REGISTER</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header><!-- Navigation bar ends here -->
+    {% block body_block %}
+
+    {% endblock %}
+    <br><br>
+    <footer><!-- Footer bar begins here -->
+        <div class="footer item">
+            <h4>FOR YOU</h4>
+            <ul>
+                <li><a href="{% url 'rango:register' %}">Register</a></li>
+                <li><a href="{% url 'rango:outfit' %}">Outfits</a></li>
+                <li><a href="{% url 'rango:tips' %}">Tips</a></li>
+            </ul>
+        </div>
+
+        <div class="footer item">
+            {% if user.is_authenticated %}
+            <h4>QUICKLINKS</h4>
+            <ul>
+                <li><a href="{% url 'rango:profile' %}">My Profile</a></li>
+                <li><a href="{% url 'rango:lists' %}">Checklist</a></li>
+                <li><a href="{% url 'rango:admin' %}" id="admintag">Admin</a></li>
+            </ul>
+            {% endif %}
+        </div>
+
+
+        <div class="footer item">
+            <a href="{% url 'rango:index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="logo" class="logo">
+            </a>
+        </div>
+
+        <div class="copyright">
+            <p>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                C&copy; 2023 COMPANY. All Right Reserved
+            </p>
+        </div>
+    </footer><!-- Footer bar ends here -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+<script src="{% static 'ajax_script.js' %}"></script>
+<script src="https://kit.fontawesome.com/cea382ae72.js" crossorigin="anonymous"></script>
+
+</html>

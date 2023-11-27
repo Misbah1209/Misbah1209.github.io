@@ -1,0 +1,44 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Tips
+{% endblock %}
+{% block body_block %}
+<div class="tips_head">
+    <h1 style="color:#8CD0DE; text-align: center;">Fashion & Travel Tips</h1>
+    <p> Travel Tips and Fashion Hacks for an Unforgettable Adventure </p>
+</div>
+<div class="dropdown" style="float:right;"><!-- this div displays the button to sort tips -->
+    <button class="button"><i class="fa-solid fa-caret-down"></i>SORT</button>
+    <div class="dropdown-content">
+        {% for category in categories %}
+        <a href="{% url 'rango:tips' %}?category={{category.name}}">{{ category.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+<div class="tips"><!-- this div displays all the tips -->
+    <ul>
+        {% if tips %}
+            {% for tip in tips %}
+            <li>
+                <div class="tips-img">
+                    <img src="{{tip.img.url}}" alt="pic">
+                </div>
+                <div class="tips-info">
+                    <div class="tips-text">
+                        <h2>{{ tip.title }}</h2><br>
+                        <p>{{ tip.content }}</p>
+                    </div><br>
+                    <div class="likes"><i class="fa-solid fa-heart"></i><strong class="like_count">{{ tip.likes }}</strong></div>
+                    <div class="tips-btn">
+                        <button class="like" data-tipid="{{ tip.id }}" type="button"><i class="fa-solid fa-heart"></i>LIKE</button>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        {% else %}
+        <strong>No tips currently in category.</strong>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Admin
+{% endblock %}
+{% block body_block %}
+<div class="tabs">
+    <input type="radio" name="tab-control" id="tab1" checked /><!-- this tab displays all the tips -->
+    <input type="radio" name="tab-control" id="tab2" /><!-- this tab displays form to add tips -->
+    <input type="radio" name="tab-control" id="tab3" /><!-- this tab displays form to edit tips -->
+
+    <ul>
+        <li>
+            <label for="tab1">View All Tips</label>
+        </li>
+        <li>
+            <label for="tab2">Add Tips</label>
+        </li>
+        <li>
+            <label for="tab3">Edit Tips</label>
+        </li>
+    </ul>
+
+    <div class="slider">
+        <div class="indicator"></div>
+    </div>
+
+    <div class="content">
+        <section>
+            <!-- below is a table used to display the tips detail in a tabular format -->
+            <table id="allTips">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Likes</th>
+                    <th>Update</th>
+                    <th>Delete</th>                    
+                </tr>
+                <!-- for each tip a new row is appended -->
+                {% if tips %}
+                {% for tip in tips %}
+                <tr>
+                    <td>{{tip.id}}</td>
+                    <td>{{tip.title}}</td>
+                    <td>{{tip.likes}}</td>
+                    <td><a href="{% url 'rango:edit_tip' tip.id %}" style="color: green;">Update</a></td>
+                    <td><a href="{% url 'rango:delete_tip' tip.id %}" style="color: maroon;"> Delete </a></td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <strong>No tips currently in category.</strong>
+                {% endif %}
+            </table>
+        </section>
+        <section class="admin_section"><!-- this section displays form to add tip -->
+            <div class="form_container">
+                <div class="user signinBx">
+                    <div class="imgBx"><img src="{% static 'images/admin1.jpg' %}" alt="add tip pic" /></div>
+                    <div class="formBx">
+                        <form method="post" enctype="multipart/form-data" action="{% url 'rango:add_tip' %}">
+                            <h2>ADD TIPS</h2>
+                            {% csrf_token %}
+                            <label for="{{ addform.title.id_for_label }}">Title</label>
+                            {{ addform.title }}
+                                                       
+                            <label for="{{ addform.img.id_for_label }}">Image</label>
+                            {{ addform.img }}
+                            
+                            <label for="{{ addform.likes.id_for_label }}">Likes</label>
+                            {{ addform.likes }}
+                            
+                            <label for="{{ addform.category.id_for_label }}">Category</label>
+                            {{ addform.category }}
+                            <br>
+                            <label for="{{ addform.likes.id_for_label }}">Content:</label>
+                            {{ addform.content }}
+                            <input type="submit" value="Save" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="admin_section"><!-- this section displays form to edit tip -->
+            <div class="form_container">
+                <div class="user signinBx">
+                    <div class="imgBx"><img src="{% static 'images/admin3.jpg' %}" alt="edit tip pic" /></div>
+                    <div class="formBx">
+                        <form method="post" enctype="multipart/form-data" action="">
+                            <h2>EDIT TIPS</h2>
+                            {% csrf_token %}
+                            <label for="{{ addform.title.id_for_label }}">Title</label>
+                            {{ editform.title }}
+                                                       
+                            <label for="{{ addform.img.id_for_label }}">Image</label>
+                            {{ editform.img }}
+                            
+                            <label for="{{ addform.likes.id_for_label }}">Likes</label>
+                            {{ editform.likes }}
+                            
+                            <label for="{{ addform.category.id_for_label }}">Category</label>
+                            {{ editform.category }}
+                            <br>
+                            <label for="{{ addform.likes.id_for_label }}">Content:</label>
+                            {{ editform.content }}
+                            <input type="submit" value="Save" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img src="{% static 'images/plane.jpg' %}" style="display: block;height: 150px;width:100%">
+    </div>
+</div>
+
+{% endblock %}

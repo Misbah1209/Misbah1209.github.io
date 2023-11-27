@@ -1,0 +1,30 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Add Outfit
+{% endblock %}
+{% block body_block %}
+<section>
+    <!-- this section displays form to upload outfits -->
+    <div class="form_container">
+        <div class="user signinBx">
+            <div class="imgBx"><img src="{% static 'images/outfit1.jpg' %}" alt="list pic" /></div>
+            <div class="formBx">
+                <form method="post"  enctype="multipart/form-data" action="">
+                    <h2>Upload Outfits</h2>
+                    {% csrf_token %}
+                    <label for="{{ form.season.id_for_label }}">Season</label>
+                    {{ form.season }}<br>
+                    <label for="{{ form.name.id_for_label }}">Name</label>
+                    {{ form.name }}
+                    <label for="{{ form.image.id_for_label }}">Image</label>
+                    {{ form.image }}
+                    <label for="{{ form.description.id_for_label }}">Description</label>
+                    {{ form.description }}
+                    <input type="submit" value="Upload" />
+                </form>
+            </div>
+        </div>
+    </div> 
+</section>
+{% endblock %}
