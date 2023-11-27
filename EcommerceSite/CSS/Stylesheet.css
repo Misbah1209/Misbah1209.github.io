@@ -717,7 +717,7 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* slides styling */
 .slideshow-container {
-  max-width: 400px;
+  max-width: 360px;
   position: relative;
   margin-left: 30px;
 }
@@ -743,7 +743,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .next {
-  right: -319px;
+  right: -285px;
   border-radius: 3px 0 0 3px;
 }
 
