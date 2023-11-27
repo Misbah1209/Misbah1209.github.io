@@ -1,0 +1,73 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Products
+{% endblock %}
+
+{% block body_block %}
+<!-- this page is used to display the products from the database according to the category selected -->
+<!-- it alos consist of funtions sort, search and filter -->
+    <div class="products-section">
+        <div class="product-caption">
+            <h2 style="display: inline;">Home > {{category.name}}</h2>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Sort</button>
+                <div class="dropdown-content">
+                    <a href="?sort=sx">Low to High Price</a>
+                    <a href="?sort=jx">High to Low Price</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Filter</button>
+                <div class="dropdown-content">
+                    <a href="?color=black">Black</a>
+                    <a href="?color=white">White</a>
+                    <a href="?color=grey">Grey</a>
+                    <a href="?color=gold">Gold</a>
+                    <a href="?color=brown">Brown</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="fieldwrapper">
+                    <form action="{% url 'rango:show_category' category.name|lower %}">
+                        <input type="text" name="keyword" class="field r2" placeholder="Enter keywords to search" />
+                        <button type="submit" class="dropbtn">search<i class="fa fa-search"></i></button>         
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="grid-container"> <!--Grid start end-->
+            <!-- only products of the selected category will be displayed -->
+            {% if category %}
+                {% if products %}
+                    {% for product in products %}
+                    <div class="grid-item"> <!--Item 1-->
+                        <div class="card-item">
+                            <div class="card-img">
+                                <img src="{{product.product_image.url}}" alt="pic">
+                            </div>
+                            <div class="card-info">
+                                <input type="hidden" value="{{product.id}}" class="prod_id">
+                                <input type="hidden" value="{{product.title}}" class="prod_name ">
+                                <input type="hidden" value="{{product.price}}" class="prod_price"">
+                                <h4 >{{ product.title }}</h4>
+                                <small >£{{ product.price }}</small>
+                            </div>
+                            <div class="button">
+                                <button onclick="addToBasket('{{product.title}}', '{{product.price}}')">ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                <strong>No products currently in category.</strong>
+                {% endif %}
+            {% else %}
+                The specefied category does not exist.
+            {% endif %}
+        </div>
+        <br><br>
+    </div>
+    {% endblock %}

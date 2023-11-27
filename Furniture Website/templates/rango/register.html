@@ -1,0 +1,33 @@
+
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+Register
+{% endblock %}
+
+{% block body_block %}
+    <!-- Body start -->
+    <!-- this is an html page to display the register form for the users -->
+    <div class="wall" style='background-image: url("{% static 'images/bg1.jpg' %}");'>
+        <form id="user_form" method="post" class="account_container" action="{% url 'rango:register' %}"
+        enctype="multipart/form-data">
+            <h1>Join Us</h1><br>
+            <hr><br>
+            <h2>Create Account</h2><br>
+
+            {% csrf_token %}
+            <div class="columns">
+                {{ user_form.as_p }}
+            </div>
+            <div class="columns">
+                {{ profile_form.as_p }}
+            </div>
+            
+            <input type="submit" class="btn" name="submit" value="Register" />
+            {% if registered %}
+                <label id="lblreg">Thank you for registering!</label>
+            {% endif %}
+        </form>
+    </div>
+    <!-- Body end -->
+{% endblock %}
