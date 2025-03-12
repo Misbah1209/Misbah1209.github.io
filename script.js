@@ -20,7 +20,7 @@ link2.addEventListener('click', () => {
 });
 
 link3.addEventListener('click', () => {
-    scrollToElement('.header', 3);
+    scrollToElement('.header', 2);
 });
 
 link4.addEventListener('click', () => {
@@ -28,7 +28,7 @@ link4.addEventListener('click', () => {
 });
 
 link5.addEventListener('click', () => {
-    scrollToElement('.header', 2);
+    scrollToElement('.header', 3);
 });
 
 document.getElementById('openResume').addEventListener('click', function() {
