@@ -20,7 +20,7 @@ link2.addEventListener('click', () => {
 });
 
 link3.addEventListener('click', () => {
-    scrollToElement('.header', 2);
+    scrollToElement('.header', 3);
 });
 
 link4.addEventListener('click', () => {
