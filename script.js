@@ -27,7 +27,7 @@ link4.addEventListener('click', () => {
 });
 
 document.getElementById('openResume').addEventListener('click', function() {
-    window.open('static/MisbahShaikh.pdf', '_blank');
+    window.open('static/Misbah Tajuddin Shaikh Resume.pdf', '_blank');
 });
 
 const cardsContainer = document.querySelector(".cards");
