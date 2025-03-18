@@ -1,7 +1,7 @@
-function scrollToElement(elementSelector, instance = 0) {
-    const elements = document.querySelectorAll(elementSelector);
-    if (elements.length > instance) {
-        elements[instance].scrollIntoView({ behavior: 'smooth' });
+function scrollToElement(elementSelector) {
+    const element = document.querySelector(elementSelector);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
@@ -12,24 +12,25 @@ const link4 = document.getElementById("link4");
 const link5 = document.getElementById("link5");
 
 link1.addEventListener('click', () => {
-    scrollToElement('.header');
+    scrollToElement('#skills');  // Scroll to Skills section
 });
 
 link2.addEventListener('click', () => {
-    scrollToElement('.header', 1);
+    scrollToElement('#experience');  // Scroll to Experience section
 });
 
 link3.addEventListener('click', () => {
-    scrollToElement('.header', 3);
+    scrollToElement('#education');  // Scroll to Education section
 });
 
 link4.addEventListener('click', () => {
-    scrollToElement('.column');
+    scrollToElement('#projects');  // Scroll to Projects section
 });
 
 link5.addEventListener('click', () => {
-    scrollToElement('.header', 3);
+    scrollToElement('#contactme');  // Scroll to Contact Me section
 });
+
 
 document.getElementById('openResume').addEventListener('click', function() {
     window.open('static/Resume.pdf', '_blank');
