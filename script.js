@@ -36,6 +36,10 @@ document.getElementById('openResume').addEventListener('click', function() {
     window.open('static/Resume.pdf', '_blank');
 });
 
+document.getElementById('openResume').addEventListener('click', function() {
+    window.open('static/SLA.pdf', '_blank');
+});
+
 const cardsContainer = document.querySelector(".cards");
 const prevButton = document.querySelector(".prev-btn");
 const nextButton = document.querySelector(".next-btn");
@@ -95,4 +99,5 @@ setupPopup("popupTrigger3", "popup3");
 
 function openLink(url) {
   window.open(url, "_blank");
+
 }
