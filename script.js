@@ -36,7 +36,7 @@ document.getElementById('openResume').addEventListener('click', function() {
     window.open('static/Resume.pdf', '_blank');
 });
 
-document.getElementById('openResume').addEventListener('click', function() {
+document.getElementById('SLA').addEventListener('click', function() {
     window.open('static/SLA.pdf', '_blank');
 });
 
@@ -101,3 +101,4 @@ function openLink(url) {
   window.open(url, "_blank");
 
 }
+
