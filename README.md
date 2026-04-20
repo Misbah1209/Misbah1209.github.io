@@ -17,3 +17,6 @@ Figma-Heuristic Evaluation-Usability Testing-HCI
 
 6)Fashion Travel Planner
 Html-Css-JavaScript-Django-SQLlite
+
+7)AI‑Powered Real‑Time Analytics Dashboard
+React-TypeScript-Zustand-Node.js-Express-WebSockets
